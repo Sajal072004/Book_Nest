@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
+
+
 function Login() {
   const {
     register,
@@ -7,7 +11,33 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) =>{
+    const userInfo={
+      emailId:data.emailId,
+      password:data.password
+    }
+    await axios.post('http://localhost:4001/user/login',userInfo)   //is url mein humko userInfo store karwana hai
+    .then((res)=>{
+        console.log(res.data);
+        if(res.data){
+          toast.success('Login successfull');
+          setTimeout(()=>{
+            document.getElementById("my_modal_3").close();
+          window.location.reload();
+          localStorage.setItem("Users",JSON.stringify(res.data.user));                         //kyunki hum chahte hai courses wala section sirf authenticated log dekh paaye to local storage mein store.
+          },1000)
+
+        }
+        
+    }).catch((err)=>{
+       if(err.response){
+        console.log(err);
+        toast.error("Error : "+err.response.data.message);
+        setTimeout(()=>{},1000)
+
+       }
+    })
+  };
   return (
     <>
       <div>
@@ -18,7 +48,7 @@ function Login() {
               <Link
                 to="/"
                 className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-                onClick={() => document.getElementById("my_modal_3").closest()}
+                onClick={() => document.getElementById("my_modal_3").close()}
               >
                 ✕
               </Link>
@@ -31,10 +61,10 @@ function Login() {
                   type="email"
                   placeholder="Enter your email"
                   className="w-80 px-3 py-1 rounded-md outline-none"
-                  {...register("email", { required: true })}
+                  {...register("emailId", { required: true })}
                 />
                 <br />
-                {errors.email && <span className="text-sm text-red-500">This field is required</span>}
+                {errors.emailId && <span className="text-sm text-red-500">This field is required</span>}
               </div>
 
               {/* Password */}
@@ -44,7 +74,7 @@ function Login() {
                 <input 
                   type="password"
                   placeholder="Enter your password"
-                  className="w-80 px-3 py-1 rounded-md outline-none"
+                  className="w-80 px-3 py-1 rounded-md outline-none dark:bg-slate-800 dark:text-white"
                   {...register("password", { required: true })}
                 />
                 <br />
