@@ -1,0 +1,110 @@
+[{
+    "id":1,
+    "name":"Giggles Galore",
+    "title":"Fun stories for kids, full of imagination and adventure.",
+    "price":0,
+    "category":"Comedy",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":2,
+    "name":"Edge of Fear",
+    "title":"Intense, suspenseful tales with twists and breathetaking action.",
+    "price":0,
+    "category":"Thriller",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":3,
+    "name":"Galactic Odyssey",
+    "title":"Futuristic tales of space exploration, alien encounters, and wonders.",
+    "price":0,
+    "category":"Science Fiction",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":4,
+    "name":"Timeless Tales",
+    "title":"Rich stories set in the past, blending history with imagination.",
+    "price":0,
+    "category":"Historical Fiction",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":5,
+    "name":"Enchanted Realms",
+    "title":"Magical worlds with wizards, dragons, and epic quests for glory.",
+    "price":0,
+    "category":"Fantasy",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":6,
+    "name":"Whispering Shadows",
+    "title":"Intriguing mysteries with clever detectives solving crimes and secrets.",
+    "price":0,
+    "category":"Mystery",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":7,
+    "name":"Heart's Desire",
+    "title":"Beautiful love stories filled with passion, emotion, and happy endings.",
+    "price":0,
+    "category":"Romance",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":8,
+    "name":"Nightmare Chronicles",
+    "title":"Terrifying stories filled with fear, suspense, and supernatural horrors.",
+    "price":30,
+    "category":"Horror",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":9,
+    "name":"Winning Streaks",
+    "title":"Exciting stories about sports, full of action and adventure.",
+    "price":50,
+    "category":"Sports",
+    "subs":"Free",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":10,
+    "name":"Laugh Out Loud",
+    "title":"Funny tales that will make you laugh out loud.",
+    "price":20,
+    "category":"Entertainment",
+    "subs":"Paid",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+},
+
+{
+    "id":11,
+    "name":"Epic Journeys",
+    "title":"Thrilling adventures across exotic lands, facing danger and discovering treasures",
+    "price":0,
+    "category":"Adventure",
+    "subs":"Paid",
+    "image":"https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg?t=st=1718481728~exp=1718485328~hmac=52f478c0fa2584a73de259e48e0f2eb4382ed502268803ca167810f34397004f&w=826"
+}
+]
