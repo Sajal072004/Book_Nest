@@ -24,7 +24,8 @@ function Signup() {
           emailId:data.emailId,
           password:data.password
         }
-        await axios.post('http://localhost:4001/user/signup',userInfo)   //is url mein humko userInfo store karwana hai
+        axios.defaults.withCredentials = true;
+        await axios.post('https://book-nest-api.vercel.app/signup',userInfo)   //is url mein humko userInfo store karwana hai
         .then((res)=>{
             console.log(res.data);
             if(res.data){
