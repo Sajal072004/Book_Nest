@@ -14,6 +14,8 @@ app.use(cors(
         methods: ["POST"  , "GET"],
         credentials: true,
     }
+    )
+        )
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
