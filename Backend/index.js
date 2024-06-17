@@ -8,14 +8,11 @@ import cors from 'cors'
 dotenv.config();
 const app=express();
 
-app.use(cors(
-    {
-        origin: ["https://book-nest-wine.vercel.app"],
-        methods: ["POST"  , "GET"],
-        credentials: true,
-    }
-    )
-        );
+app.use(cors({
+    origin: ["https://book-nest-wine.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
