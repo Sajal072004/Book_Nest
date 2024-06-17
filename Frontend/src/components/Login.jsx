@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import toast from "react-hot-toast";
-
+import toast, { Toaster } from "react-hot-toast";
 
 function Login() {
   const {
@@ -11,34 +10,42 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) =>{
-    const userInfo={
-      emailId:data.emailId,
-      password:data.password
+  const onSubmit = async (data) => {
+    const userInfo = {
+      emailId: data.emailId,
+      password: data.password
+    };
+
+    try {
+      const response = await axios.post('https://book-nest-api.vercel.app/login', userInfo, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      console.log(response.data);
+      
+      if (response.data) {
+        toast.success('Login successful');
+        localStorage.setItem("Users", JSON.stringify(response.data.user)); // Store user data in local storage
+        setTimeout(() => {
+          document.getElementById("my_modal_3").close();
+          window.location.reload(); // Reload the page to reflect the login state
+        }, 1000);
+      }
+    } catch (err) {
+      if (err.response) {
+        console.error(err);
+        toast.error("Error: " + err.response.data.message);
+      } else {
+        console.error('Network Error:', err);
+        toast.error("Network error. Please try again.");
+      }
+      setTimeout(() => {}, 1000); // This setTimeout doesn't seem necessary
     }
-    axios.defaults.withCredentials = true;
-    await axios.post('https://book-nest-api.vercel.app/login',userInfo)   //is url mein humko userInfo store karwana hai
-    .then((res)=>{
-        console.log(res.data);
-        if(res.data){
-          toast.success('Login successfull');
-          setTimeout(()=>{
-            document.getElementById("my_modal_3").close();
-          window.location.reload();
-          localStorage.setItem("Users",JSON.stringify(res.data.user));                         //kyunki hum chahte hai courses wala section sirf authenticated log dekh paaye to local storage mein store.
-          },1000)
-
-        }
-        
-    }).catch((err)=>{
-       if(err.response){
-        console.log(err);
-        toast.error("Error : "+err.response.data.message);
-        setTimeout(()=>{},1000)
-
-       }
-    })
   };
+
   return (
     <>
       <div>
@@ -72,7 +79,7 @@ function Login() {
               <div className="mt-4 space-y-2">
                 <span>Password</span>
                 <br />
-                <input 
+                <input
                   type="password"
                   placeholder="Enter your password"
                   className="w-80 px-3 py-1 rounded-md outline-none dark:bg-slate-800 dark:text-white"
@@ -83,16 +90,12 @@ function Login() {
               </div>
               {/* Button */}
               <div className="flex justify-around mt-4 ">
-                <button className="bg-pink-500 text-white rounded-md px-3 py-1">
-                  {" "}
+                <button type="submit" className="bg-pink-500 text-white rounded-md px-3 py-1">
                   Login
                 </button>
                 <p>
                   Not registered?{" "}
-                  <Link
-                    to="/signup"
-                    className="underline text-blue-500 cursor-pointer"
-                  >
+                  <Link to="/signup" className="underline text-blue-500 cursor-pointer">
                     Signup
                   </Link>
                 </p>
@@ -101,6 +104,7 @@ function Login() {
           </div>
         </dialog>
       </div>
+      <Toaster />
     </>
   );
 }
