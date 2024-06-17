@@ -8,18 +8,12 @@ import cors from 'cors'
 dotenv.config();
 const app=express();
 
-const corsOptions = {
-    origin: "https://book-nest-wine.vercel.app",
-    methods: ["POST", "GET", "OPTIONS"],
-    credentials: true,
-    optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
-app.use(cors(corsOptions)); // Apply CORS configuration
-
-// Handle preflight requests
-app.options('*', cors(corsOptions));
-
+app.use(cors({
+  origin: 'https://book-nest-wine.vercel.app', // Allow requests from this origin
+  methods: ['POST', 'GET'], // Allow these methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+  credentials: true // Allow cookies or credentials
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
