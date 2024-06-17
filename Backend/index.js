@@ -10,7 +10,7 @@ const app=express();
 
 app.use(cors(
     {
-        origin: [""],
+        origin: ["https://book-nest-wine.vercel.app"],
         methods: ["POST"  , "GET"],
         credentials: true,
     }
